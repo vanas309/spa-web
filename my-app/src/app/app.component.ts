@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProductsTableComponent } from './components/products-table/products-table.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
   SidebarComponent,
   MainContentComponent,
   FooterComponent,
-  UserProfileComponent
+  ProductsTableComponent,
+  UserProfileComponent  
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
