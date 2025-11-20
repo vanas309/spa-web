@@ -1,0 +1,10 @@
+<div class="quiz-container">
+  <app-question 
+    [question]="questionData"
+    (answerSelected)="onAnswerSelected($event)">
+  </app-question>
+
+  <button (click)="showAnswer()">Показати відповідь</button>
+
+  <p *ngIf="selectedAnswer">Ви обрали: {{ selectedAnswer }}</p>
+</div>

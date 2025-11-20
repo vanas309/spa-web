@@ -1,0 +1,12 @@
+li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+li.selected {
+  background-color: #d3d3d3;
+}
+
+li.correct {
+  background-color: #90ee90;
+}
