@@ -6,6 +6,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsTableComponent } from './components/products-table/products-table.component';
+import { ConfigurableHighlightDirective } from './configurable-highlight.directive';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { ProductsTableComponent } from './components/products-table/products-tab
   MainContentComponent,
   FooterComponent,
   ProductsTableComponent,
+  ConfigurableHighlightDirective, 
   UserProfileComponent  
   ],
   templateUrl: './app.component.html',
