@@ -1,27 +1,29 @@
 import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { QuestionComponent } from '../question/question.component';
 
 @Component({
   selector: 'app-quiz',
+  standalone: true,
   templateUrl: './quiz.component.html',
-  styleUrls: ['./quiz.component.css']
+  imports: [CommonModule, QuestionComponent]
 })
 export class QuizComponent {
-  @ViewChild(QuestionComponent) questionComponent!: QuestionComponent;
-
   questionData = {
-    text: 'Яка столиця України?',
-    options: ['Київ', 'Львів', 'Одеса', 'Харків'],
-    correct: 'Київ'
+    text: 'Який оператор виконує перебір масиву?',
+    options: ['for', 'if', 'switch', 'return'],
+    correct: 'for'
   };
 
-  selectedAnswer: string = '';
+  lastAnswer: string | null = null;
 
-  onAnswerSelected(answer: string) {
-    this.selectedAnswer = answer;
+  @ViewChild(QuestionComponent) questionComponent!: QuestionComponent;
+
+  handleAnswer(selected: string) {
+    this.lastAnswer = selected;
   }
 
-  showAnswer() {
+  showCorrect() {
     this.questionComponent.showAnswer();
   }
 }

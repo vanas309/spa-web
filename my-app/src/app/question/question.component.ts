@@ -1,23 +1,23 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-question',
+  standalone: true,
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  imports: [CommonModule]
 })
 export class QuestionComponent {
-  @Input() question: any; 
+  @Input() question!: { text: string, options: string[], correct: string };
   @Output() answerSelected = new EventEmitter<string>();
-  
-  selectedAnswer: string = '';
-  correctAnswerHighlighted: boolean = false;
+
+  highlightedAnswer: string | null = null;
 
   selectAnswer(option: string) {
-    this.selectedAnswer = option;
     this.answerSelected.emit(option);
   }
 
   showAnswer() {
-    this.correctAnswerHighlighted = true;
+    this.highlightedAnswer = this.question.correct;
   }
 }

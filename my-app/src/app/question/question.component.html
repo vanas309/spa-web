@@ -1,11 +1,10 @@
-<div class="question-card">
-  <h3>{{ question.text }}</h3>
-  <ul>
-    <li *ngFor="let option of question.options"
-        [class.correct]="correctAnswerHighlighted && option === question.correct"
-        [class.selected]="option === selectedAnswer"
-        (click)="selectAnswer(option)">
-      {{ option }}
-    </li>
-  </ul>
-</div>
+<h3>{{ question.text }}</h3>
+
+<ul>
+  <li *ngFor="let opt of question.options"
+      [style.color]="opt === highlightedAnswer ? 'green' : 'black'"
+      (click)="selectAnswer(opt)"
+      style="cursor: pointer;">
+    {{ opt }}
+  </li>
+</ul>
